@@ -137,46 +137,46 @@ namespace CarInsurance.Controllers
 
                 if (dateOfBirth.Year >= 2003)
                 {
-                    quote =+ 100.00M;
+                    quote += 100.00M;
                 }
                 else if (dateOfBirth.Year <= 2001 && dateOfBirth.Year >= 1996)
                 {
-                    quote =+ 50.0M;
+                    quote += 50.0M;
                 }
                 else if (dateOfBirth.Year < 1996)
                 {
-                    quote = quote + 25.0M;
+                    quote += 25.0M;
                 }
 
                 if (carYear < 2000)
                 {
-                    quote =+ 25.0M;
+                    quote += 25.0M;
                 }
                 else if (carYear > 2015)
                 {
-                    quote =+ 25.0M;
+                    quote += 25.0M;
                 }
 
                 if (carMake == "Porsche")
                 {
-                    quote =+ 25.0M;
+                    quote += 25.0M;
                 }
 
                 if (carMake == "Porsche" && carModel == "911 Carrera")
                 {
-                    quote =+ 25.0M;
+                    quote += 25.0M;
                 }
 
                 quote = quote + (speedingTickets * 10.0M);
 
                 if (dui == true)
                 {
-                    quote =+ (quote / 4.0M);
+                    quote += (quote / 4.0M);
                 }
 
                 if (coverageType == true)
                 {
-                    quote =+ (quote / 2.0M);
+                    quote += (quote / 2.0M);
                 }
                 insuree.Quote = quote;
                 db.SaveChanges();
