@@ -70,9 +70,7 @@ namespace CarInsurance.Controllers
             return View(insuree);
         }
 
-        // POST: Insuree/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,EmailAddress,DateOfBirth,CarYear,CarMake,CarModel,DUI,SpeedingTickets,CoverageType")] Insuree insuree)
@@ -87,7 +85,7 @@ namespace CarInsurance.Controllers
             return View(insuree);
         }
 
-        // GET: Insuree/Delete/5
+        // GET: Insuree/Delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -102,7 +100,7 @@ namespace CarInsurance.Controllers
             return View(insuree);
         }
 
-        // POST: Insuree/Delete/5
+        // POST: Insuree/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
